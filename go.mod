@@ -1,4 +1,4 @@
-module github.com/threeal/go-starter
+module github.com/threeal/kill-process-go
 
 go 1.19
 

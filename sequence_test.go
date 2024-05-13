@@ -1,4 +1,4 @@
-package myfibonacci
+package killprocess
 
 import (
 	"testing"
