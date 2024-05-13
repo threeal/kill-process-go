@@ -1,0 +1,46 @@
+name: CI
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  check-packages:
+    name: Check Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.5
+
+      - name: Setup Go
+        uses: actions/setup-go@v5.0.1
+        with:
+          go-version: stable
+
+      - name: Check Formatting
+        run: |
+          go fmt ./...
+          git diff --exit-code HEAD
+
+  test-packages:
+    name: Test Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.5
+
+      - name: Setup Go
+        uses: actions/setup-go@v5.0.1
+        with:
+          go-version: stable
+
+      - name: Run Tests
+        run: go test -v ./... -coverprofile=.cover.out -covermode=atomic -coverpkg=./...
+
+      - name: Check Coverage
+        uses: vladopajic/go-test-coverage@v2.10.1
+        with:
+          profile: .cover.out
+          threshold-file: 100
+          threshold-package: 100
+          threshold-total: 100
