@@ -1,3 +1,9 @@
-# Go Starter
+# Kill Process Go
 
-A minimalistic [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) to kickstart your [Go](https://go.dev/) project
+A simple [Go](https://go.dev/) package for killing a running process.
+
+## License
+
+This project is licensed under the terms of the [MIT License](./LICENSE).
+
+Copyright © 2024 [Alfi Maulana](https://github.com/threeal)
