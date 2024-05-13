@@ -1,5 +1,5 @@
-// Package myfibonacci provides example functions for generating sequences of numbers.
-package myfibonacci
+// Package killprocess provides example functions for generating sequences of numbers.
+package killprocess
 
 // FibonacciSequence generates a Fibonacci sequence up to the given number of terms.
 func FibonacciSequence(n int) []int {
