@@ -23,6 +23,9 @@ func TestKillProcess(t *testing.T) {
 	err := Kill("sleep")
 	require.NoError(t, err)
 
+	err = Kill("sleep")
+	require.NoError(t, err)
+
 	endTime := time.Now().Add(10 * time.Second)
 	for time.Now().Before(endTime) {
 		if !processExist("sleep") {
